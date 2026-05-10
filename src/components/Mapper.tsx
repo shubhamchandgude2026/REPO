@@ -6,13 +6,13 @@ const Mapper = () => {
     { value: "ADMIN", label: "Administrator" },
     { value: "USER", label: "Normal User" },
   ];
-  const ADMIN_MAPPER:Record<UserRoles,string> = createMapper(roles);
-  console.log(ADMIN_MAPPER);
+  const USER_ROLES_MAPPER:Record<UserRoles,string> = createMapper(roles);
+  console.log(USER_ROLES_MAPPER);
   
   return <div>
     <h1>Mapper</h1>
     {
-        ADMIN_MAPPER["ADMIN"]
+        USER_ROLES_MAPPER["ADMIN"]
     }
   </div>;
 };
