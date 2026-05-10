@@ -1,19 +1,22 @@
-import Post from "./compoundComponents/Post"
+import Post from "./compoundComponents/Post";
+import CanAccess from "./permissions/CanAccess";
 
 const TestCompundPostCard = () => {
-    const post = {
-        id: 1,
-        title: "Post Title",
-        content: "Post Content"
-    }
+  const post = {
+    id: 1,
+    title: "Post Title",
+    content: "Post Content",
+  };
   return (
     <div>
-        <Post post={post}>
-            <Post.Title/>
-            <Post.Body/>
-        </Post>
+      <Post post={post}>
+        <CanAccess permission="EDIT">
+          <Post.Title />
+        </CanAccess>
+        <Post.Body />
+      </Post>
     </div>
-  )
-}
+  );
+};
 
-export default TestCompundPostCard
+export default TestCompundPostCard;
