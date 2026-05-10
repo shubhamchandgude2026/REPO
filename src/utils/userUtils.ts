@@ -5,8 +5,8 @@ import {
   type UserRoles,
 } from "../components/types/User";
 
-export const hasPermission = (role: UserRoles, permission: string): boolean => {
-  if (ROLE_PERMISSIONS[role].includes(permission as Permissions)) return true;
+export const hasPermission = (role: UserRoles, permission: Permissions): boolean => {
+  if (ROLE_PERMISSIONS[role].includes(permission)) return true;
   return false;
 };
 
