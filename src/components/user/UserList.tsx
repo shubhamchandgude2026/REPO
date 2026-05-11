@@ -1,8 +1,21 @@
+import { useState } from "react";
 import UserCard from "../compoundComponents/user_card/UserCard";
-import { users } from "../types/User";
+import { users, type Permissions, type User } from "../types/User";
 
 const UserList = () => {
 
+     interface UserModalProps {
+        isOpen: boolean;
+        mode : Permissions;
+        selectedUser: User | null
+     }
+    const initialState:UserModalProps = {
+        isOpen: false,
+        mode: "READ",
+        selectedUser: null
+    }
+
+    const [userModal,setUserModal] = useState<UserModalProps>(initialState);
     const handleOpen = (userId:number)=>{
         console.log("open modal",userId);
     }
