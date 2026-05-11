@@ -1,9 +1,9 @@
+import type { PropsWithChildren } from "react";
 import { hasPermission, useCurrentUser } from "../../utils/userUtils";
 import type { Permissions } from "../types/User";
 
-type CanAccessProps = {
+interface CanAccessProps extends PropsWithChildren {
     permission: Permissions;
-    children:React.ReactNode;
 }
 const CanAccess = ({permission,children}:CanAccessProps) => {
     const userRole = useCurrentUser().role;

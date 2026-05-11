@@ -14,6 +14,6 @@ export const useCurrentUser = (): User => {
   return {
     id: 1,
     name: "shubham",
-    role: "ADMIN",
+    role: "STAFF",
   };
 };
