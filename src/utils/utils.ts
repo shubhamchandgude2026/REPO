@@ -9,3 +9,14 @@ export const createMapper = <T extends { value: string; label: string }>(
 };
 
 
+type MonthYear ={
+    month:number;
+    year:number;
+}
+export const getMonthYearFromInput=(date: Date = new Date()):MonthYear=>
+{
+    return {
+        month: date?.getMonth() +1,
+        year: date?.getFullYear()
+    }
+}

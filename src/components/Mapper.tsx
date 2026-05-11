@@ -1,4 +1,4 @@
-import { createMapper } from "../utils/utils";
+import { createMapper, getMonthYearFromInput } from "../utils/utils";
 import type { UserRoles } from "./types/User";
 
 const Mapper = () => {
@@ -8,7 +8,9 @@ const Mapper = () => {
   ];
   const USER_ROLES_MAPPER:Record<UserRoles,string> = createMapper(roles);
   console.log(USER_ROLES_MAPPER);
-  
+const {month,year} = getMonthYearFromInput(new Date());
+console.log("month",month,year);
+
   return <div>
     <h1>Mapper</h1>
     {

@@ -5,17 +5,23 @@ import Formik from "./components/formik";
 import ShowAllUserCards from "./components/ShowAllUserCards";
 import TestCompundPostCard from "./components/TestCompundPostCard";
 import Mapper from "./components/Mapper";
+import UserList from "./components/user/UserList";
+import ErrorBoundary from "./components/common/ErrorBoundary";
+
 function App() {
   // const [count, setCount] = useState<number>(0);
   return (
     <>
       <Router>
-        <Routes>
-          <Route path="/" element={<Formik/>}/>
-          <Route path="/users" element={<ShowAllUserCards/>} />
-          <Route path="/test" element={<TestCompundPostCard/>} />
-          <Route path="/mapper" element={<Mapper/>} />
-        </Routes>
+        <ErrorBoundary>
+          <Routes>
+            <Route path="/" element={<Formik />} />
+            <Route path="/users" element={<ShowAllUserCards />} />
+            <Route path="/test" element={<TestCompundPostCard />} />
+            <Route path="/mapper" element={<Mapper />} />
+            <Route path="/user-list" element={<UserList />} />
+          </Routes>
+        </ErrorBoundary>
       </Router>
     </>
   );
