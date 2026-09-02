@@ -7,6 +7,7 @@ import TestCompundPostCard from "./components/TestCompundPostCard";
 import Mapper from "./components/Mapper";
 import UserList from "./components/user/UserList";
 import ErrorBoundary from "./components/common/ErrorBoundary";
+import FormikForm from "./components/forms/FormikForm";
 
 function App() {
   // const [count, setCount] = useState<number>(0);
@@ -20,6 +21,7 @@ function App() {
             <Route path="/test" element={<TestCompundPostCard />} />
             <Route path="/mapper" element={<Mapper />} />
             <Route path="/user-list" element={<UserList />} />
+            <Route  path="/formik" element={<FormikForm/>}/>
           </Routes>
         </ErrorBoundary>
       </Router>
